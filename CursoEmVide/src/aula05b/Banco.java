@@ -67,7 +67,7 @@ public class Banco {
 
         if ("cp".equals(tipo)) {
             System.out.println("Você abriu uma conta poupança!");
-            this.saldo = this.saldo + 300;
+            this.setSaldo(this.getSaldo() + 300); //dar preferencia sempre para o metodo set e get
             System.out.println("Nome: "+this.getDono());
             System.out.println("Número da conta: "+this.getNumConta());
             System.out.println("Saldo disponível: R$" + this.getSaldo());
@@ -78,7 +78,7 @@ public class Banco {
         } else {
             
             System.out.println("Você abriu uma conta corrente!");
-            this.saldo = this.getSaldo() + 150;
+            this.setSaldo(this.getSaldo() + 150);//dar preferencia sempre para o metodo set e get
              System.out.println("Nome: "+this.getDono());
             System.out.println("Número da conta: "+this.getNumConta());
             System.out.println("Saldo dísponível: R$" + this.getSaldo());
@@ -91,7 +91,7 @@ public class Banco {
 
     public void FecharConta() {
 
-        if (this.saldo != 0) {
+        if (this.getSaldo() != 0) {
             System.out.println("Sua conta possui dinheiro. Não foi possível fechar a conta.");
             this.status = true;
             System.out.println("Conta Ativa.");
@@ -106,19 +106,20 @@ public class Banco {
 
     public void Deposita(double quantidade) {
 
-        this.saldo = this.saldo + quantidade;
+        this.setSaldo(this.getSaldo() + quantidade); //dar preferencia sempre para o metodo set e get
 
-        System.out.println("Saldo dísponível pós depósito: R$");
+        System.out.println("Saldo dísponível pós depósito: R$"+this.getSaldo());
+         System.out.println("                         ");
     }
 
     public void Saca(double quantidade) {
-        if (this.saldo < quantidade)
+        if (this.getSaldo() < quantidade)
         {
             System.out.println("Não é possível sacar essa quantia;");
         }
         
         else{
-             this.saldo = this.saldo - quantidade;
+             this.setSaldo(this.getSaldo() - quantidade);//dar preferencia sempre para o metodo set e get
             System.out.println("Saque autorizado. Saldo atual pós saque: R$"+this.getSaldo());
         }
        
