@@ -67,7 +67,7 @@ public class Banco {
 
         if ("cp".equals(tipo)) {
             System.out.println("Você abriu uma conta poupança!");
-            this.setSaldo(this.getSaldo() + 300); //dar preferencia sempre para o metodo set e get
+            this.setSaldo(this.getSaldo() + 300); //dar preferencia sempre para o metodo set e get, automaticamente soma-se ao saldo 300
             System.out.println("Nome: "+this.getDono());
             System.out.println("Número da conta: "+this.getNumConta());
             System.out.println("Saldo disponível: R$" + this.getSaldo());
@@ -78,7 +78,7 @@ public class Banco {
         } else {
             
             System.out.println("Você abriu uma conta corrente!");
-            this.setSaldo(this.getSaldo() + 150);//dar preferencia sempre para o metodo set e get
+            this.setSaldo(this.getSaldo() + 150);//dar preferencia sempre para o metodo set e get, automaticamente soma-se no saldo 150
              System.out.println("Nome: "+this.getDono());
             System.out.println("Número da conta: "+this.getNumConta());
             System.out.println("Saldo dísponível: R$" + this.getSaldo());
