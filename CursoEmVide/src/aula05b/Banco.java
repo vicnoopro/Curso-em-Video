@@ -15,10 +15,13 @@ public class Banco {
     private double saldo;
     private boolean status;
 
-    public Banco(String dono, String numConta) {
+    public Banco(String dono, String numConta, double saldo) {
         this.dono = dono;
         this.numConta = numConta;
+        this.saldo = saldo;
     }
+
+    
 
     public String getDono() {
         return dono;
