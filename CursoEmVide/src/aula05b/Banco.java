@@ -21,8 +21,6 @@ public class Banco {
         this.saldo = saldo;
     }
 
-    
-
     public String getDono() {
         return dono;
     }
@@ -68,23 +66,18 @@ public class Banco {
         if ("cp".equals(tipo)) {
             System.out.println("Você abriu uma conta poupança!");
             this.setSaldo(this.getSaldo() + 300); //dar preferencia sempre para o metodo set e get, automaticamente soma-se ao saldo 300
-            System.out.println("Nome: "+this.getDono());
-            System.out.println("Número da conta: "+this.getNumConta());
-            System.out.println("Saldo disponível: R$" + this.getSaldo());
 
-            this.status = true;
+            this.setStatus(true);
             System.out.println("Conta Ativa.");
-               System.out.println("                         ");
+            System.out.println("                         ");
         } else {
-            
+
             System.out.println("Você abriu uma conta corrente!");
             this.setSaldo(this.getSaldo() + 150);//dar preferencia sempre para o metodo set e get, automaticamente soma-se no saldo 150
-             System.out.println("Nome: "+this.getDono());
-            System.out.println("Número da conta: "+this.getNumConta());
-            System.out.println("Saldo dísponível: R$" + this.getSaldo());
-            this.status = true;
+
+            this.setStatus(true);
             System.out.println("Conta Ativa.");
-               System.out.println("                         ");
+            System.out.println("                         ");
         }
 
     }
@@ -95,12 +88,12 @@ public class Banco {
             System.out.println("Sua conta possui dinheiro. Não foi possível fechar a conta.");
             this.status = true;
             System.out.println("Conta Ativa.");
-               System.out.println("                         ");
+            System.out.println("                         ");
         } else {
             System.out.println("Conta fechada com sucesso!");
             this.status = false;
             System.out.println("Conta Inativa.");
-               System.out.println("                         ");
+            System.out.println("                         ");
         }
     }
 
@@ -108,44 +101,39 @@ public class Banco {
 
         this.setSaldo(this.getSaldo() + quantidade); //dar preferencia sempre para o metodo set e get
 
-        System.out.println("Saldo dísponível pós depósito: R$"+this.getSaldo());
-         System.out.println("                         ");
     }
 
     public void Saca(double quantidade) {
-        if (this.getSaldo() < quantidade)
-        {
+        if (this.getSaldo() < quantidade) {
             System.out.println("Não é possível sacar essa quantia;");
+        } else {
+            this.setSaldo(this.getSaldo() - quantidade);//dar preferencia sempre para o metodo set e get
+
         }
-        
-        else{
-             this.setSaldo(this.getSaldo() - quantidade);//dar preferencia sempre para o metodo set e get
-            System.out.println("Saque autorizado. Saldo atual pós saque: R$"+this.getSaldo());
-        }
-       
+
     }
-  
-    public void verificar(String tipo){
-        
+
+    public void verificar(String tipo) {
+
         if ("cp".equals(tipo)) {
             System.out.println("Relatório:");
-           
-            System.out.println("Nome: "+this.getDono());
-            System.out.println("Número da conta: "+this.getNumConta());
+
+            System.out.println("Nome: " + this.getDono());
+            System.out.println("Número da conta: " + this.getNumConta());
             System.out.println("Saldo disponível: R$" + this.getSaldo());
 
             this.status = true;
             System.out.println("Conta Ativa.");
             System.out.println("                         ");
         } else {
-            
+
             System.out.println("Relatório");
-             System.out.println("Nome: "+this.getDono());
-            System.out.println("Número da conta: "+this.getNumConta());
+            System.out.println("Nome: " + this.getDono());
+            System.out.println("Número da conta: " + this.getNumConta());
             System.out.println("Saldo dísponível: R$" + this.getSaldo());
             this.status = true;
             System.out.println("Conta Ativa.");
-               System.out.println("                         ");
+            System.out.println("                         ");
         }
 
     }
