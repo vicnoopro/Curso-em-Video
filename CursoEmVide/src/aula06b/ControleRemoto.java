@@ -52,8 +52,9 @@ public class ControleRemoto {
         System.out.println("Está tocando? "+this.isTocando());
         System.out.print("Volume: "+this.getVolume()); 
         for (int i = 0; i<=this.getVolume(); i+=10){
-            System.out.print("|");
+            System.out.print(" | ");
         }
+           System.out.println("    ");
     }
     
     public void FecharMenu(){
